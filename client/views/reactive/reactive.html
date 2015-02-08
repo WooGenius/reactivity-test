@@ -1,0 +1,19 @@
+<template name="reactive">
+  <div class="js-reactive view reactive">
+    <h1>Reactive</h1>
+
+    {{> section subscription=subs.foos label="foos" item=foo}}
+    {{> section subscription=subs.bars label="bars" item=bar}}
+  </div>
+</template>
+
+<template name="section">
+  <p>
+    {{label}}
+    {{#if subscription.ready}}
+      ready: {{item.name}}
+    {{else}}
+      waiting...
+    {{/if}}
+  </p>
+</template>
