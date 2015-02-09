@@ -13,8 +13,8 @@ Router.map(->
       console.log "data"
       data =
         subs: @subs
-        foo: Foos.findOne()
-        bar: Bars.findOne()
+        foo: -> Foos.findOne()
+        bar: -> Bars.findOne()
     subscriptions: ->
       console.log "subscriptions"
       @subs =
